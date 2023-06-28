@@ -201,7 +201,8 @@ typedef enum
   USBPD_TRACE_PHY_NOTFRWD = 14,
   USBPD_TRACE_CPU         = 15,
   USBPD_TRACE_TIMEOUT     = 16,
-  USBPD_TRACE_UCSI        = 18
+  USBPD_TRACE_UCSI        = 18,
+  USBPD_TRACE_MSG_MSC     = 19,
 }
 TRACE_EVENT;
 
@@ -238,11 +239,12 @@ typedef void (*TRACE_ENTRY_POINT)(TRACE_EVENT type, uint8_t port, uint8_t sop, u
 #define PE_SNK_TSAFE0V_T2                1000u  /*!< tSafe0V for SNK: 1000 ms                                  */
 #define PE_TSRCTURNON_T4                 275u   /*!< tSrcTurnOn: 275 ms                                        */
 #define PE_TPSSOURCEOFF                  900u   /*!< tPSSourceOff: min 750ms to max 920ms                      */
-#define PE_TPSSOURCEON                   470u   /*!< tPSSourceOn: min 390ms to max 480ms                       */
+#define PE_TPSSOURCEON                   440u   /*!< tPSSourceOn: min 390ms to max 480ms                       */
 
 #define PE_TPSTRANSITION                 500u   /*!< tPSTransition: min 450ms to max 550ms                     */
+#define PE_TPSTRANSITION_EPR             925u   /*!< tPSTransition: min 830ms to max 1020ms                    */
 
-#define PE_TSENDERRESPONSE               27u    /*!< tSenderResponse: min 24ms to max 30ms                     */
+#define PE_TSENDERRESPONSE               29u    /*!< tSenderResponse: min 26ms to max 30ms                     */
 
 #define PE_TTYPECSINKWAITCAP             500u   /*!< tTypeCSinkWaitCap: min 310ms to max 620ms                 */
 
@@ -673,6 +675,16 @@ typedef struct
     */
   USBPD_FunctionalState(*USBPD_PE_IsPowerReady)(uint8_t PortNum, USBPD_VSAFE_StatusTypeDef Vsafe);
 
+#if defined (USBPD_REV31_SUPPORT) &&  defined(USBPDCORE_EPR)
+  /**
+    * @brief  Callback used to request DPM what to do
+    * @note   this function is a common function to ask DPM what the policy engine shall do.
+    * @param  PortNum Port number
+    * @param  Id of the action @ref USBPD_CORE_ActionType_TypeDef
+    * @retval Returned values are: @ref USBPD_ACCEPT, USBPD_REJECT, USBPD_WAIT, USBPD_DELAYANSWER, USBPD_NOTSUPPORTED
+    */
+  uint32_t (*USBPD_PE_RequestDPMWhatToDo)(uint8_t PortNum, uint32_t IDAction);
+#endif /* USBPD_REV31_SUPPORT && (USBPDCORE_USBDATA || USBPDCORE_EPR) */
 
 } USBPD_PE_Callbacks;
 
@@ -724,6 +736,8 @@ uint32_t            USBPD_PE_CheckLIB(uint32_t LibId);
   * @retval Memory size
   */
 uint32_t            USBPD_PE_GetMemoryConsumption(void);
+
+uint32_t            USBPD_PRL_ManageChunkRx(uint8_t PortNum);
 
 /**
   * @brief  Set the trace pointer and the debug level
@@ -1172,6 +1186,41 @@ USBPD_StatusTypeDef   USBPD_TCPM_EnterErrorRecovery(uint32_t PortNum);
   */
 #endif /* USBPDCORE_TCPM_SUPPORT */
 
+#if defined(USBPD_REV31_SUPPORT) && defined(USBPDCORE_EPR)
+
+/**
+  * @brief  This function is used to send an extended control message
+  * @param  PortNum      Port number value
+  * @param  MessageType  Extended control Msg type @ref USBPD_ExtendedControl_Typedef
+  * @retval USBPD status
+  *       USBPD_BUSY  : the request can be execute because an action is ongoing
+  *       USBPD_ERROR : the PD state doesn't allow this operation
+  *       USBPD_FAIL  : the operation is not allowed in this context
+  *       USBPD_OK    : the request has been post to the stack
+  */
+USBPD_StatusTypeDef USBPD_PE_Send_ExtendeControlMessage(uint8_t PortNum,
+                                                        USBPD_ExtendedControl_Typedef MessageType);
+
+#if defined(USBPDCORE_EPR) && (defined(USBPDCORE_SNK) || defined(USBPDCORE_DRP))
+/**
+  * @brief  This function request PE to send an EPR_Mode enter
+  * @param  PortNum   Index of current used port
+  * @retval status    @ref USBPD_OK, @ref USBPD_BUSY, @ref USBPD_ERROR or @ref USBPD_FAIL
+  *
+  * @note : this function can be only called by a sink with an explicit contract
+  */
+USBPD_StatusTypeDef USBPD_PE_Request_EPRModeEnter(uint8_t PortNum);
+
+/**
+  * @brief  This function request PE to send an EPR_Mode exit
+  * @param  PortNum   Index of current used port
+  * @retval status    @ref USBPD_OK, @ref USBPD_BUSY, @ref USBPD_ERROR or @ref USBPD_FAIL
+  *
+  * @note : this function can be only called by a sink with an explicit contract
+  */
+USBPD_StatusTypeDef USBPD_PE_Request_EPRModeExit(uint8_t PortNum);
+#endif /* USBPDCORE_EPR && (USBPDCORE_SNK || USBPDCORE_DRP) */
+#endif /* USBPD_REV31_SUPPORT && (USBPDCORE_EPR || USBPDCORE_USBDATA) */
 /**
   * @}
   */

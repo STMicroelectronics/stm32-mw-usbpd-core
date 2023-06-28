@@ -303,7 +303,10 @@ USBPD_StatusTypeDef USBPD_DPM_InitCore(void)
     USBPD_DPM_EnterErrorRecovery,
 #endif /* _ERRORRECOVERY_NOTSUPPORTED */
     USBPD_DPM_EvaluateDataRoleSwap,
-    USBPD_DPM_IsPowerReady
+    USBPD_DPM_IsPowerReady,
+#if  defined(USBPDCORE_EPR)
+    USBPD_DPM_RequestWhatToDo,
+#endif /* USBPDCORE_USBDATA */
   };
 
   static const USBPD_CAD_Callbacks CAD_cbs =
@@ -633,7 +636,7 @@ void USBPD_DPM_Run(void)
 #elif _SNK
           USBPD_PE_StateMachine_SNK(port);
 #endif /* _DRP */
-        DPM_Sleep_start[port] = HAL_GetTick();
+        DPM_Sleep_start[port] = HAL_GetTick() + 1;
       }
     }
 #endif /* USBPDCORE_LIB_NO_PD */
