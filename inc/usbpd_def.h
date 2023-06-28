@@ -2952,11 +2952,11 @@ typedef union
   uint32_t d32;
   struct
   {
-    uint32_t Revision_major    : 4u; /*!< revision major */
-    uint32_t Revision_minor    : 4u; /*!< revision minor */
-    uint32_t Version_major     : 4u; /*!< version major */
-    uint32_t Version_minor     : 4u; /*!< version minor */
-    uint32_t                   :16u;  /*!< reserved */
+    uint32_t                   :16u; /*!< Reserved       */
+    uint32_t Version_minor     : 4u; /*!< Version minor  */
+    uint32_t Version_major     : 4u; /*!< Version major  */
+    uint32_t Revision_minor    : 4u; /*!< Revision minor */
+    uint32_t Revision_major    : 4u; /*!< Revision major */
   }
   b;
 } USBPD_RevisionDO_TypeDef;

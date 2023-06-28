@@ -128,14 +128,14 @@ uint32_t                USBPD_CAD_Process(void);
 void                    USBPD_CAD_PortEnable(uint8_t PortNum, USBPD_CAD_activation State);
 
 /**
-  * @brief  Set the resitor to present a SNK.
+  * @brief  Set the resistor to present a SNK.
   * @param  PortNum Index of current used port
   * @retval None
   */
 void                    USBPD_CAD_AssertRd(uint8_t PortNum);
 
 /**
-  * @brief  Set the resitor to present a SRC.
+  * @brief  Set the resistor to present a SRC.
   * @param  PortNum Index of current used port
   * @retval None
   */
@@ -593,7 +593,7 @@ typedef struct
   void (*USBPD_PE_SetDataInfo)(uint8_t PortNum, USBPD_CORE_DataInfoType_TypeDef DataId, uint8_t *Ptr, uint32_t Size);
 
   /**
-    * @brief  Callback used by a SOURCE to evluate the SINK request
+    * @brief  Callback used by a SOURCE to evaluate the SINK request
     * @param  PortNum Port number
     * @param  PtrPowerObject  Pointer on the power data object
     * @retval Returned values are: @ref USBPD_ACCEPT, @ref USBPD_REJECT, @ref USBPD_WAIT, @ref USBPD_GOTOMIN
@@ -791,7 +791,7 @@ void USBPD_PE_IsCableConnected(uint8_t PortNum, uint8_t IsConnected);
 
 /**
   * @brief  Increment PE Timers tick
-  * @note   This function must be called each elasped ms
+  * @note   This function must be called each elapsed ms
   * @param  PortNum Index of current used port
   * @retval None
   */
