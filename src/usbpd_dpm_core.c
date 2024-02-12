@@ -771,7 +771,7 @@ DEF_TASK_FUNCTION(USBPD_PE_Task)
        well done */
     if ((DPM_Params[_port].PE_SwapOngoing == 0) && (USBPD_ERROR == USBPD_TCPM_VBUS_IsVsafe5V(_port)))
     {
-      (void)osMessagePut(AlarmMsgBox, (_port << 8 | 2), osWaitForever);
+      OS_PUT_MESSAGE_QUEUE(AlarmMsgBox, (_port << 8 | 2), osWaitForever);
     }
 #endif /* USBPD_TCPM_MODULE_ENABLED */
   }
@@ -793,6 +793,7 @@ DEF_TASK_FUNCTION(USBPD_ALERT_Task)
     osEvent event = osMessageGet(queue, osWaitForever);
     port = (event.value.v >> 8);
 #else
+    uint32_t event;
     (void)osMessageQueueGet(queue, &event, NULL, osWaitForever);
     port = (event >> 8);
 #endif /* osCMSIS < 0x20000U */
