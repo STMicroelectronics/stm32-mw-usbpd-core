@@ -1,6 +1,6 @@
 /**
   ******************************************************************************
-  * @file    usbpd_pe_genericmachine.h
+  * @file    usbpd_pe_extctrl.h
   * @author  MCD Application Team
   * @brief   This file provides the definition used for the management of short generic state machines
   ******************************************************************************
@@ -15,7 +15,15 @@
   *
   ******************************************************************************
   */
+#ifndef USBPD_PE_EXTCTRL_H_
+#define USBPD_PE_EXTCTRL_H_
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 /* Includes ------------------------------------------------------------------*/
+
 /** @addtogroup STM32_USBPD_LIBRARY
   * @{
   */
@@ -43,9 +51,14 @@ extern const PE_GENMACH_TypeDef _Generic_AMS_Send_EPRKeepAliveAck_SRC;
 extern const PE_GENMACH_TypeDef _Generic_AMS_Send_EPRGetSNKCapa;
 extern const PE_GENMACH_TypeDef _Generic_AMS_Send_EPRSRCCapa;
 #endif /* USBPDCORE_SNK || USBPDCORE_DRP */
+
 /* Exported Private function prototypes -----------------------------------------------*/
 /**
   * @}
   */
 
-/************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/
+#ifdef __cplusplus
+}
+#endif
+
+#endif /* USBPD_PE_EXTCTRL_H_ */

@@ -15,10 +15,17 @@
   *
   ******************************************************************************
   */
+#ifndef USBPD_PE_GENERICMACHINE_H_
+#define USBPD_PE_GENERICMACHINE_H_
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 /* Includes ------------------------------------------------------------------*/
 #if !defined(_SIMULATOR)
 #include "cmsis_compiler.h"
-#endif /* _SIMULATOR */
+#endif /* !_SIMULATOR */
 
 /** @addtogroup STM32_USBPD_LIBRARY
   * @{
@@ -117,4 +124,8 @@ uint32_t PE_GENMACH_StateMachine_Run(USBPD_PE_HandleTypeDef *pPEHandle, USBPD_St
   * @}
   */
 
-/************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/
+#ifdef __cplusplus
+}
+#endif
+
+#endif /* USBPD_PE_GENERICMACHINE_H_ */

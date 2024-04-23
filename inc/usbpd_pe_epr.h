@@ -15,7 +15,15 @@
   *
   ******************************************************************************
   */
+#ifndef USBPD_PE_EPR_H_
+#define USBPD_PE_EPR_H_
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 /* Includes ------------------------------------------------------------------*/
+
 /** @addtogroup STM32_USBPD_LIBRARY
   * @{
   */
@@ -36,9 +44,14 @@ extern const PE_GENMACH_TypeDef _Generic_AMS_Send_EnterMode_SNK;
 extern const PE_GENMACH_TypeDef _Generic_AMS_Send_EnterMode_SRC;
 extern const PE_GENMACH_TypeDef _Generic_AMS_Send_ExitMode_SNK;
 extern const PE_GENMACH_TypeDef _Generic_AMS_Send_ExitMode_SRC;
+
 /* Exported Private function prototypes -----------------------------------------------*/
 /**
   * @}
   */
 
-/************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/
+#ifdef __cplusplus
+}
+#endif
+
+#endif /* USBPD_PE_EPR_H_ */

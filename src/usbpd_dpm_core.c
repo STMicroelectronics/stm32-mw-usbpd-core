@@ -267,11 +267,7 @@ USBPD_StatusTypeDef USBPD_DPM_InitCore(void)
     NULL,
 #endif /* DRP */
     USBPD_DPM_Notification,
-#ifdef USBPD_REV30_SUPPORT
     USBPD_DPM_ExtendedMessageReceived,
-#else
-    NULL,
-#endif /* USBPD_REV30_SUPPORT */
     USBPD_DPM_GetDataInfo,
     USBPD_DPM_SetDataInfo,
 #if defined(_SRC) || defined(_DRP)

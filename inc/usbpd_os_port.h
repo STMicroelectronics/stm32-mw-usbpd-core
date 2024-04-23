@@ -29,6 +29,7 @@ extern "C" {
 #if defined(_RTOS)
 #include "cmsis_os.h"
 #if (osCMSIS >= 0x20000U)
+#include "FreeRTOS.h"
 #include "task.h"
 #endif /* osCMSIS >= 0x20000U */
 #else
@@ -91,9 +92,13 @@ extern "C" {
 
 #define OS_QUEUE_ID TX_QUEUE
 
-#else
+#elif (osCMSIS < 0x20000U)
 
 #define OS_QUEUE_ID osMessageQId
+
+#else
+
+#define OS_QUEUE_ID osMessageQueueId_t
 
 #endif /* USBPD_THREADX */
 
@@ -239,9 +244,14 @@ extern "C" {
 #if defined(USBPD_THREADX)
 
 #define OS_TASK_ID   TX_THREAD
-#else
+
+#elif (osCMSIS < 0x20000U)
 
 #define OS_TASK_ID   osThreadId
+
+#else
+
+#define OS_TASK_ID   osThreadId_t
 #endif /* USBPD_THREADX */
 
 /**
@@ -402,5 +412,5 @@ extern "C" {
 #ifdef __cplusplus
 }
 #endif
-#endif /* USBPD_CORE_OSPORT_H_ */
 
+#endif /* USBPD_CORE_OSPORT_H_ */
