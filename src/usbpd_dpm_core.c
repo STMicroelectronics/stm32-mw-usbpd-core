@@ -432,8 +432,10 @@ USBPD_StatusTypeDef USBPD_DPM_InitOS(void)
 #endif /* USBPD_TCPM_MODULE_ENABLED */
 
 #if !defined(USBPDCORE_LIB_NO_PD)
+  /* Create the queue corresponding to PE task */
   for (uint32_t index = 0; index < USBPD_PORT_COUNT; index++)
   {
+
     if (index == USBPD_PORT_0)
     {
       /* Create the queue corresponding to PE task */
