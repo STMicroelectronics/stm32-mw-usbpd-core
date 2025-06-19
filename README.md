@@ -1,6 +1,6 @@
 # Middleware USBPD Core MCU Component
 
-![tag](https://img.shields.io/badge/tag-v4.1.1-brightgreen.svg)
+![tag](https://img.shields.io/badge/tag-v4.1.2-brightgreen.svg)
 
 ## Overview
 
