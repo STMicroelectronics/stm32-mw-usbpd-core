@@ -3502,7 +3502,7 @@ typedef struct
   uint32_t PE_VDMSupport                    : 1u; /*!< Support VDM: If not enabled any VDM message received is replied "not supported" */
   uint32_t PE_PingSupport                   : 1u; /*!< support Ping (only for PD3.0): If enabled allows DPM to send ping message       */
   uint32_t PE_CapscounterSupport            : 1u; /*!< If enabled after an amount of message source capabilities not replied, the stack stop the message send.*/
-  uint32_t PE_RespondsToDiscovSOP           : 1u; /*!< Can respond successfully to a Discover Identity */
+  uint32_t PE_RespondsToDiscovSOP           : 1u; /*!< Can respond successfully to a Discover Identity. PE_VDMSupport needs to be enabled. */
   uint32_t PE_AttemptsDiscovSOP             : 1u; /*!< Can send a Discover Identity */
   uint32_t CAD_TryFeature                   : 2u; /*!< Not yet implemented                                                              */
   uint32_t CAD_AccesorySupport              : 1u; /*!< Not yet implemented                                                              */
