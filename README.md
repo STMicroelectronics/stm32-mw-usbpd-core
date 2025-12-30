@@ -1,7 +1,7 @@
 # Middleware USBPD Core MCU Component
 USB Power Delivery core stack library component for STM32
 
-![latest tag](https://img.shields.io/github/v/tag/STMicroelectronics/stm32-mw-usbpd-core.svg?color=brightgreen)
+![tag](https://img.shields.io/badge/tag-v4.3.2-brightgreen.svg)
 
 ## Overview
 
@@ -24,7 +24,7 @@ This **stm32-mw-usbpd-core** MCU component repository is one element **common to
 
 ## Release note
 
-Details about the content of this release are available in the release note [here](https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-mw-usbpd-core/blob/main/Release_Notes.html).
+Details about the content of this release are available in the release note [here](https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-mw-usbpd-core/blob/release/v4.3.x/Release_Notes.html).
 
 ## Troubleshooting
 
