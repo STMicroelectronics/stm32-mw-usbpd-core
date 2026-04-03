@@ -1,6 +1,6 @@
 # Core USB Power Delivery Middleware Library MCU Software Component
 
-![latest tag](https://img.shields.io/github/v/tag/STMicroelectronics/stm32-mw-usbpd-core.svg?color=brightgreen)
+![tag](https://img.shields.io/badge/tag-v5.4.0-brightgreen.svg)
 
 ## Overview of the STM32Cube MCU offer on GitHub
 
