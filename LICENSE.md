@@ -11,14 +11,14 @@ SLA0044 Rev6/October 2025
 
 BY CLICKING ON THE "I ACCEPT" BUTTON OR BY UNZIPPING, INSTALLING, COPYING,
 DOWNLOADING, ACCESSING OR OTHERWISE USING THIS SOFTWARE OR ANY PART THEREOF, 
-INCLUDING ANY RELATED DOCUMENTATION (collectively the ‚ÄúSOFTWARE‚Äù) 
+INCLUDING ANY RELATED DOCUMENTATION (collectively the ìSOFTWAREî) 
 FROM STMICROELECTRONICS INTERNATIONAL N.V, SWISS BRANCH AND/OR 
-ITS AFFILIATED COMPANIES (collectively ‚ÄúSTMICROELECTRONICS‚Äù),
-YOU (hereinafter referred also to as ‚ÄúTHE RECIPIENT‚Äù), ON BEHALF OF YOURSELF,
+ITS AFFILIATED COMPANIES (collectively ìSTMICROELECTRONICSî),
+YOU (hereinafter referred also to as ìTHE RECIPIENTî), ON BEHALF OF YOURSELF,
 OR ON BEHALF OF ANY ENTITY BY WHICH YOU ARE EMPLOYED AND/OR ENGAGED, 
 AGREE TO BE BOUND BY THIS AGREEMENT.
 
-Under STMICROELECTRONICS‚Äô intellectual property rights, the redistribution,
+Under STMICROELECTRONICSí intellectual property rights, the redistribution,
 reproduction and use in source and binary forms of the SOFTWARE or any part
 thereof, with or without modification, are permitted provided that the following
 conditions are met:
@@ -43,7 +43,7 @@ manufactured by or for STMicroelectronics.
 
 5. No use, reproduction or redistribution of the SOFTWARE partially
 or totally may be done in any manner that would subject the SOFTWARE
-to any Open Source Terms. ‚ÄúOpen Source Terms‚Äù shall mean
+to any Open Source Terms. ìOpen Source Termsî shall mean
 any open source license which requires as part of distribution
 of software that the source code of such software is distributed
 therewith or otherwise made available, or open source license
@@ -68,7 +68,7 @@ any applicable export control law or regulation.
 
 9. Redistribution and use of the SOFTWARE or any part thereof other
 than as permitted under this AGREEMENT is void and will automatically
-terminate RECIPIENT‚Äôs rights under this AGREEMENT.
+terminate RECIPIENTís rights under this AGREEMENT.
 
 10. The RECIPIENT shall be solely liable to determine and verify that
 the SOFTWARE is fit for the RECIPIENT intended use, environment or

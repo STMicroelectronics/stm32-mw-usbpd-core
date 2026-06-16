@@ -1503,6 +1503,18 @@ typedef uint32_t USBPD_CORE_PDO_Type_TypeDef;
   * @}
   */
 
+/** @defgroup USBPD_CORE_APDO_Type_TypeDef APDO type definition
+  * @brief  APDO type values in PDO definition
+  * @{
+  */
+#define USBPD_CORE_APDO_TYPE_PPS        0x00u            /*!< APDO sub-type = SPR Programmable Power Supply */
+#define USBPD_CORE_APDO_TYPE_EPR_AVS    0x01u            /*!< APDO sub-type = EPR Adjustable Voltage Supply */
+#define USBPD_CORE_APDO_TYPE_SPR_AVS    0x02u            /*!< APDO sub-type = SPR Adjustable Voltage Supply */
+
+typedef uint32_t USBPD_CORE_APDO_Type_TypeDef;
+/**
+  * @}
+  */
 /** @defgroup USBPD_CORE_POWER_Type_TypeDef USB-PD power state
   * @brief  USB Power state
   * @{

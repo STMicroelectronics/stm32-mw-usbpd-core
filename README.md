@@ -1,14 +1,14 @@
 # Core USB Power Delivery Middleware Library MCU Software Component
 
-![tag](https://img.shields.io/badge/tag-v5.4.0-brightgreen.svg)
+![tag](https://img.shields.io/badge/tag-v5.4.1-brightgreen.svg)
 
 ## Overview of the STM32Cube MCU offer on GitHub
 
-**STM32Cube** is an original initiative by STMicroelectronics to **simplify** prototyping and development by **reducing** effort, time, and cost. It supports the entire ARMâ„¢ Cortex-based STM32 microcontroller portfolio and provides a **comprehensive** software solution including:
+**STM32Cube** is an original initiative by STMicroelectronics to **simplify** prototyping and development by **reducing** effort, time, and cost. It supports the entire ARM™ Cortex-based STM32 microcontroller portfolio and provides a **comprehensive** software solution including:
   * The CMSIS Core and Device interfaces enabling access to processor core features and device-specific peripherals of STM32 microcontrollers.
   * The STM32 HAL-LL drivers, an abstraction layer offering a set of APIs ensuring maximized portability across the STM32 portfolio.
   * The BSP drivers enabling access to peripherals on the STM32 development boards, external to the microcontroller itself.
-  * A consistent set of middleware libraries offering standardized, high-level functionalities â€” such as USB, TCP/IP, file systems, and graphics.
+  * A consistent set of middleware libraries offering standardized, high-level functionalities — such as USB, TCP/IP, file systems, and graphics.
   * A full set of software projects (basic examples, applications, and demonstrations) that showcase specific functionalities or use cases, and provided with support for multiple IDEs.
 
 The **STM32Cube embedded software** is available in two flavors:

@@ -23,12 +23,45 @@ and Connector Specification, Revision 2.0 (August, 2019). It has passed successf
 
 Here is the list of references to user documents:
 
-- [ST page](https://www.st.com/en/applications/connectivity/usb-type-c-and-power-delivery.html): Key features of the new USB Type-Câ„¢ connector
+- [ST page](https://www.st.com/en/applications/connectivity/usb-type-c-and-power-delivery.html): Key features of the new USB Type-C™ connector
 - [UM2552](https://www.st.com/resource/en/user_manual/dm00598101-managing-usb-power-delivery-systems-with-stm32-microcontrollers-stmicroelectronics.pdf): USB power delivery User Manual
 - [WIKI Page](https://wiki.st.com/stm32mcu/wiki/USB_Power_Delivery_overview): USB Power Delivery overview
 
 
 # Update History
+
+<label for="collapse-section41" aria-hidden="true">V5.4.1 / 08-May-2026</label>
+<div>
+
+## Main Changes
+
+  Headline
+  --------
+    SW_Security_Level.md file added
+    ECN : Wait in EPR_Request implemented
+
+**Fixed bugs list**
+
+  Headline
+  --------
+    Call 'Inform Identity' upon reception of a NAK/BUSY response added
+    Missing notification of 'not supported message' reception to the policy engine binary added
+
+## Known limitations
+
+NA
+
+
+## Backward compatibility
+
+NA
+
+## Dependencies
+
+NA
+
+</div>
+
 <label for="collapse-section40" aria-hidden="true">V5.4.0 / 23-Jan-2026</label>
 <div>
 
@@ -263,7 +296,7 @@ NA
     Mcuastyle corrections
     EPR Mode Entry message sent by SNK, should contain EPR SNK Operational PDP value in Data field
     Fix response to not supported instead of soft reset when receiving an epr mode enter when epr not supported
-    Fix TEST.PD.USB4.DRST.1â€“Data_Reset command response of UFP UUT - answer not supported instead of reject
+    Fix TEST.PD.USB4.DRST.1–Data_Reset command response of UFP UUT - answer not supported instead of reject
   
 ## Known limitations
 
