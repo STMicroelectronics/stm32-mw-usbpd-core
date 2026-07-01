@@ -1,7 +1,7 @@
 # Middleware USBPD Core MCU Component
 USB Power Delivery core stack library component for STM32
 
-![tag](https://img.shields.io/badge/tag-v4.3.2-brightgreen.svg)
+![tag](https://img.shields.io/badge/tag-v4.3.3-brightgreen.svg)
 
 ## Overview
 
